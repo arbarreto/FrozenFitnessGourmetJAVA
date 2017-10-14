@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="996f550a-913f-48b1-a778-d0b64fc31e3a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="titulo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cod_pedido" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="total_pedido" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagem_logo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+		p.*, cl.*, s.*
+	FROM tblPedido AS p
+	LEFT JOIN tblCliente AS cl
+	ON (p.codCliente = cl.codCliente)
+	LEFT JOIN tblStatus AS s
+	ON (p.codStatus = s.codStatus )
+	WHERE p.codStatus = $P{cod_pedido}]]>
+	</queryString>
+	<field name="codPedido" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoPedido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dtEntrega" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dtCompra" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codStatus" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codVeiculoTransp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomeCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dtNascCliente" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="peso" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="altura" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefoneCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="celularCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emailCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="statusPedido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="27" width="215" height="27" uuid="ce25d764-0134-40cb-93bb-edb7251d041e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo} != null ? $P{titulo} : "relatório"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="333" y="4" width="222" height="75" uuid="9fe630e8-c41b-41ee-9392-0c04ca3debf9"/>
+				<imageExpression><![CDATA[$P{imagem_logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="156" height="20" uuid="6a98542d-c7e5-47ca-98c7-2d59cf727c59"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="2" width="100" height="20" uuid="c7df49d7-684b-4f2d-9b73-3ca7644c1c00"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="336e14b3-644e-4541-b737-e60c8a762dc3"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="2" width="68" height="20" uuid="fe12abf0-f8b8-418d-be60-73d403c4ae9c"/>
+				<text><![CDATA[Cod. Pedido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="2" width="100" height="20" uuid="3c29ebfb-92b7-4f1b-bf12-912e6ea782da"/>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="2" width="100" height="20" uuid="4a0d92bf-42bf-41ff-bb4b-df95448d1fc6"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="42" height="20" uuid="05766a37-ff33-4603-8f84-dece2c4ada6d"/>
+				<textFieldExpression><![CDATA[$F{codPedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="228" height="20" uuid="ccc9940d-3c50-45a3-afcd-7f8674fae54a"/>
+				<textFieldExpression><![CDATA[$F{statusPedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="0" width="100" height="20" uuid="5f477f26-72fc-47d8-9d24-c6c6a30fe87a"/>
+				<textFieldExpression><![CDATA[$F{nomeCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="452" y="0" width="100" height="20" uuid="d4ecabd9-e854-42dc-8054-e5c4610257ff"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="24" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="63" splitType="Stretch">
+			<textField>
+				<reportElement x="432" y="42" width="80" height="20" uuid="5e744026-924b-44e4-a282-9a3ff26b186a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="512" y="42" width="40" height="20" uuid="76aa7321-533e-4161-8cd0-b4380d96afd2"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="1" width="100" height="20" uuid="fc28fc7d-4f54-4dff-946d-85a46b3a6232"/>
+				<textFieldExpression><![CDATA[$P{total_pedido} != null ? $P{total_pedido}  : 0]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="313" y="2" width="115" height="20" uuid="ee8f33ca-4787-40d5-bd49-71284cbdbbd9"/>
+				<text><![CDATA[Valor total de pedidos]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="552" height="1" uuid="2bdb51eb-7710-433a-9810-81cd7c51c967"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

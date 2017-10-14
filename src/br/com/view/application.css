@@ -1,0 +1,237 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+/*	cores usadas
+ * 	#00B348 VERDE
+ * 	#E08A2C LARANJA
+ * 	#666 CINZA
+ * 
+ * -fx-accent: #666;
+ * 
+ *  The color to use in ListView/TreeView/TableView to indicate hover.
+    -fx-cell-hover-color: #cce3f4;
+ 	
+ 	-fx-selection-bar: -fx-accent;
+ 	
+ 	/* Background color to use for selection of list cells etc. This is when
+     * the control doesn't have focus or the row of a previously selected item.
+    -fx-selection-bar-non-focused: lightgrey;
+    
+ */
+ 
+ *{ 
+ 	-fx-text-fill: #707070;
+ 	/*-fx-font-family: "Comic Sans MS";
+ 	-fx-font-family: Arial; */
+ }
+.separator *.line { 
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+	-fx-border-color: #00B348;
+	-fx-background-insets: 0;
+}
+.botao{
+	-fx-background-color: #FFF;
+	-fx-text-fill: #00B348;
+	-fx-font-size: 14px;
+}
+.botao:focused{
+	-fx-background-color: #FFF;
+	-fx-text-fill: #E08A2C;
+	-fx-border-color: #E08A2C;
+	-fx-border-radius: 12px ;
+}
+.botao:hover{
+	-fx-background-color: #FFF;
+	-fx-border-color: #00B348;
+	-fx-border-radius: 12px ;
+	-fx-text-fill: #00B348;
+}
+.botao_janela{
+	-fx-background-color: #FFF;
+}
+TextField, PasswordField, DatePicker{
+	-fx-border-color: #E08A2C;
+	-fx-border-radius: 5;
+	-fx-background-insets: 0;
+}
+.focus:focused{
+	-fx-background-color: #FFF #E08A2C;
+	-fx-border-color: #E08A2C;
+}
+.tab{
+	-fx-opacity: 1;
+	-fx-tab-min-height: 2em; 
+	-fx-tab-max-height: 2em; 
+	-fx-padding: 0.083333em 0.5em 0.083333em 0.5em; /* 1 6 1 6 */	
+}
+.tab .tab-label { 
+    -fx-text-fill: #666;
+    -fx-font-size: 1.1em;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+    -fx-effect: null;
+}
+.tab-pane .tab-header-area  .headers-region .tab:selected .focus-indicator{ 
+	-fx-border-width: 0px;
+}
+.tab:top {
+	-fx-background-color: null;
+}
+.tab:right {
+	-fx-background-color: null;
+}
+.tab:bottom {
+	-fx-background-color: null;
+}
+.tab:left {
+	-fx-background-color: null;
+}
+.tab:hover {
+	-fx-border-color: #00B348;
+	-fx-background-color: #FFF;
+	-fx-border-width: 1px 1px 0px 1px;
+	-fx-border-radius: 4px 4px 0px 0px;
+}
+.tab:selected {
+	-fx-border-color: #E08A2C;
+	-fx-background-color: #FFF;
+	-fx-border-width: 1px 1px 0px 1px;
+	-fx-border-radius: 4px 4px 0px 0px;
+}
+.tab:disabled:hover {
+	-fx-border-color: #FFF;
+	-fx-background-color: #FFF;
+	-fx-text-fill: #E08A2C;
+	-fx-opacity: 0.5;
+}
+.tab:disabled {
+	-fx-opacity: 0.5;
+}
+.menu:hover { 
+	-fx-border-color: #00B348;
+	-fx-background-color: #FFF;
+	-fx-border-radius: 2px;
+ }
+.menu:showing { 
+	-fx-border-color: #00B348;
+	-fx-background-color: #FFF;
+	-fx-border-radius: 2px;	
+}
+.menu-item{ 
+	-fx-background-color: #FFF;
+}
+.menu-item:hover {
+    -fx-border-color: #00B348;
+	-fx-background-color: #FFF;
+	-fx-border-radius: 2px;
+}
+.split-pane *.split-pane-divider {
+    -fx-padding: 1;
+}
+#btnSplash, #btnSplash:focused, #btnSplash:hover {
+	-fx-background-color: #F0F0F0;
+}
+.tooltip {
+    -fx-background-radius: 2 2 2 2;
+    -fx-background-color: #FFF;
+    -fx-text-fill: #00B348;
+    -fx-font-size: 1.1em;
+}
+.dialog-pane .button{
+   -fx-background-color: #FFF;
+   -fx-text-fill: #00B348;
+   -fx-border-radius: 2px;
+   -fx-wrap-text: true;
+   -fx-cursor:hand;
+}
+.dialog-pane .button:hover{     
+	-fx-background-color: #FFF;
+	-fx-border-color: #00B348;
+	-fx-border-radius: 2px ;
+	-fx-text-fill: #00B348;
+ 	-fx-font-weight:bold; 
+}
+#lblTotal{ 
+ 	-fx-text-fill: #00B348;
+}
+.default-color0.chart-bar { -fx-bar-fill: #00B348; }
+.default-color1.chart-bar { -fx-bar-fill: #E08A2C; }
+.default-color2.chart-bar { -fx-bar-fill: #666; }
+
+.default-color0.chart-series-line { -fx-stroke: #00B348; }
+.default-color1.chart-series-line { -fx-stroke: #E08A2C; }
+.default-color2.chart-series-line { -fx-stroke: #666; }
+ 
+#btnFecharPrincipal{
+ 	-fx-background-image: url(/br/com/imagens/close.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+#btnMinimizarPrincipal{
+	-fx-background-image: url(/br/com/imagens/remove.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+#btnMaximizarPrincipal{
+	-fx-background-image: url(/br/com/imagens/maximize.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+#btnFecharPrincipal:hover{
+ 	-fx-background-color: #FE7402;
+ 	-fx-border-radius: 4;
+ 	-fx-background-image: url(/br/com/imagens/closee.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+#btnMinimizarPrincipal:hover{
+	-fx-border-color: #FE7402;
+	-fx-border-radius: 4;
+	-fx-background-image: url(/br/com/imagens/remove.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+#btnMaximizarPrincipal:hover{
+	-fx-border-color: #FE7402;
+	-fx-border-radius: 4;
+	-fx-background-image: url(/br/com/imagens/maximize.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+
+#btnFecharLogin{
+ 	-fx-background-image: url(/br/com/imagens/close.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+#btnMinimizarLogin{
+	-fx-background-image: url(/br/com/imagens/remove.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+
+#btnFecharLogin:hover{
+ 	-fx-background-color: #FE7402;
+ 	-fx-border-radius: 4;
+ 	-fx-background-image: url(/br/com/imagens/closee.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+#btnMinimizarLogin:hover{
+	-fx-border-color: #FE7402;
+	-fx-border-radius: 4;
+	-fx-background-image: url(/br/com/imagens/remove.png);
+ 	-fx-background-size: 20;
+ 	-fx-background-repeat: no-repeat ;
+ 	-fx-background-position: center  ;
+}
+ 

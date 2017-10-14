@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anpPedidos" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.controller.PedidosController">
+   <children>
+      <SplitPane dividerPositions="0.1424802110817942, 0.5" orientation="VERTICAL" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+        <items>
+          <AnchorPane maxHeight="50.0" minHeight="50.0" prefHeight="50.0" style="-fx-background-color: #FFF;" SplitPane.resizableWithParent="false">
+               <children>
+                  <TextField fx:id="txtPedido" layoutX="10.0" layoutY="12.0" prefWidth="200.0" promptText="Digite o número do pedido" styleClass="focus" />
+                  <Button fx:id="btnAtualizarPedido" layoutX="223.0" layoutY="10.0" mnemonicParsing="false" styleClass="botao" text="Atualizar">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnRelaPedi" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" styleClass="botao" text="Gerar relatório completo de pedidos" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="50.0" minHeight="50.0" style="-fx-background-color: #FFF;">
+               <children>
+                  <Label fx:id="lblFiltroStatusPedi" layoutX="10.0" text="Filtrar por status">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="rbtTodosPedi" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" text="Todos pedidos" />
+                  <RadioButton fx:id="rbtAgradPagPedi" layoutX="119.0" layoutY="25.0" mnemonicParsing="false" text="Aguardando Pagamento" />
+                  <RadioButton fx:id="rbtAguarSepaPedi" layoutX="280.0" layoutY="25.0" mnemonicParsing="false" text="Aguardando separação" />
+                  <RadioButton fx:id="rbtPratoProduPedi" layoutX="434.0" layoutY="25.0" mnemonicParsing="false" text="Prato em produção" />
+                  <RadioButton fx:id="rbtEnviadoTranspPedi" layoutX="568.0" layoutY="25.0" mnemonicParsing="false" text="Enviado para a transportadora" />
+                  <RadioButton fx:id="rbtProdTransportePedi" layoutX="759.0" layoutY="25.0" mnemonicParsing="false" text="Produto em transporte" />
+                  <RadioButton fx:id="rbtEntreguePedi" layoutX="911.0" layoutY="25.0" mnemonicParsing="false" text="Produto Entregue">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding></RadioButton>
+               </children>
+            </AnchorPane>
+          <AnchorPane>
+               <children>
+                  <TableView fx:id="tvPedidos" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                    <columns>
+                        <TableColumn fx:id="tcCodPed" maxWidth="1000.0" minWidth="90.0" prefWidth="90.0" text="Cod. Pedido" />
+                        <TableColumn fx:id="tcClien" maxWidth="1000.0" minWidth="190.0" prefWidth="190.0" text="Nome do Cliente" />
+                        <TableColumn fx:id="tcPreco" maxWidth="1000.0" minWidth="100.0" prefWidth="100.0" text="Preço" />
+                        <TableColumn fx:id="tcStatus" maxWidth="1000.0" minWidth="200.0" prefWidth="200.0" text="Status" />
+                      	<TableColumn fx:id="tcTipoPed" maxWidth="1000.0" minWidth="150.0" prefWidth="150.0" text="Tipo Pedido" />
+                        <TableColumn fx:id="tcDtComp" maxWidth="1000.0" minWidth="110.0" prefWidth="110.0" text="Data de Compra" />
+                      	<TableColumn fx:id="tcDtEntr" maxWidth="1000.0" minWidth="110.0" prefWidth="110.0" text="Data de Entrega" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

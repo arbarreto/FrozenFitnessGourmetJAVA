@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anpAcompanhamento" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.controller.AcompanhamentoController">
+   <children>
+      <TabPane fx:id="tpAcomp" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+        <tabs>
+          <Tab fx:id="tabVisuaAcomp" closable="false" text="Visualizar">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <SplitPane dividerPositions="0.1424802110817942, 0.5" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane maxHeight="50.0" minHeight="50.0" style="-fx-background-color: #FFF;" SplitPane.resizableWithParent="false">
+                                 <children>
+                                    <TextField fx:id="txtPediAcomp" layoutX="10.0" layoutY="12.0" prefWidth="200.0" promptText="Digite o número do pedido" styleClass="focus" />
+                                    <Button fx:id="btnEditarPediAcom" layoutX="306.0" layoutY="10.0" mnemonicParsing="false" styleClass="botao" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnAtualizarAcom" layoutX="221.0" layoutY="10.0" mnemonicParsing="false" styleClass="botao" text="Atualizar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnGeraRelaAcom" layoutX="370.0" layoutY="10.0" mnemonicParsing="false" styleClass="botao" text="Gerar Relatório" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane maxHeight="50.0" minHeight="50.0" style="-fx-background-color: #FFF;">
+                                 <children>
+                                    <Label fx:id="lblFiltroStatus" layoutX="7.0" text="Filtrar por status">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <RadioButton fx:id="rbtTodos" layoutX="7.0" layoutY="26.0" mnemonicParsing="false" text="Todos pedidos" />
+                                    <RadioButton fx:id="rbtAgradPag" layoutX="118.0" layoutY="26.0" mnemonicParsing="false" text="Aguardando Pagamento" />
+                                    <RadioButton fx:id="rbtAguarSepa" layoutX="280.0" layoutY="26.0" mnemonicParsing="false" text="Aguardando separação" />
+                                    <RadioButton fx:id="rbtPratoProdu" layoutX="436.0" layoutY="26.0" mnemonicParsing="false" text="Prato em produção" />
+                                    <RadioButton fx:id="rbtEnviadoTransp" layoutX="571.0" layoutY="26.0" mnemonicParsing="false" text="Enviado para a transportadora" />
+                                    <RadioButton fx:id="rbtProdTransporte" layoutX="763.0" layoutY="26.0" mnemonicParsing="false" text="Produto em transporte" />
+                                    <RadioButton fx:id="rbtEntregue" layoutX="913.0" layoutY="26.0" mnemonicParsing="false" text="Produto Entregue" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane>
+                                 <children>
+                                    <TableView fx:id="tvPedidosAcompa" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                       <columns>
+                                          <TableColumn fx:id="tcCodPedAcomp" maxWidth="1000.0" minWidth="90.0" prefWidth="90.0" text="Cod. Pedido" />
+                                          <TableColumn fx:id="tcClientePedAcomp" maxWidth="1000.0" minWidth="200.0" prefWidth="200.0" text="Cliente" />
+                                          <TableColumn fx:id="tcPrecoAcomp" maxWidth="1000.0" minWidth="90.0" prefWidth="90.0" text="Preço" />
+                                          <TableColumn fx:id="tcDtEntregaAcomp" maxWidth="1000.0" minWidth="110.0" prefWidth="110.0" text="Data de entrega" />
+                                          <TableColumn fx:id="tcStatusAcomp" maxWidth="1000.0" minWidth="200.0" prefWidth="200.0" text="Status" />
+                                          <TableColumn fx:id="tcTranspAcomp" maxWidth="1000.0" minWidth="190.0" prefWidth="190.0" text="Transportadora" />
+                                          <TableColumn fx:id="tcVeiculoAcomp" maxWidth="1000.0" minWidth="150.0" prefWidth="150.0" text="Veículo" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab fx:id="tabEditAcomp" closable="false" text="Editar">
+               <content>
+                  <AnchorPane style="-fx-background-color: #FFF;">
+                     <children>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Pane prefHeight="240.0" prefWidth="500.0" style="-fx-background-color: #FFF;">
+                                       <children>
+                                          <Label fx:id="lblCodPed" disable="true" layoutY="2.0" text="Cod Pedido" textFill="#666666">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtCodPediAcomp" disable="true" layoutY="22.0" minWidth="210.0" prefWidth="210.0" styleClass="focus" />
+                                          <Label fx:id="lblNomeClien" disable="true" layoutX="271.0" layoutY="2.0" text="Nome do Cliente" textFill="#666666">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtNomeClienAcomp" disable="true" layoutX="271.0" layoutY="22.0" minWidth="210.0" prefWidth="210.0" styleClass="focus" />
+                                          <Label fx:id="lblStatus" layoutY="67.0" text="Status" textFill="#666666">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cboStatus" layoutY="88.0" minWidth="210.0" prefWidth="210.0" styleClass="focus" />
+                                          <Label fx:id="lblTransp" layoutX="271.0" layoutY="67.0" text="Transportadora" textFill="#666666">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cboTransp" disable="true" layoutX="271.0" layoutY="88.0" minWidth="210.0" prefWidth="210.0" styleClass="focus" />
+                                          <Label fx:id="lblVeiculo" layoutX="3.0" layoutY="141.0" text="Veículo" textFill="#666666">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cboVeiculo" disable="true" layoutY="162.0" minWidth="210.0" prefWidth="210.0" styleClass="focus" />
+                                          <Button fx:id="btnAtualizarPediAcomp" layoutX="231.0" layoutY="200.0" mnemonicParsing="false" styleClass="botao" text="Atualizar">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnCancelarPediAcomp" layoutX="408.0" layoutY="200.0" mnemonicParsing="false" styleClass="botao" text="Cancelar">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnConcPediAcomp" layoutX="315.0" layoutY="200.0" mnemonicParsing="false" styleClass="botao" text="Concluído">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
